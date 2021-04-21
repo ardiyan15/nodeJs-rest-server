@@ -1,8 +1,11 @@
 const express = require('express')
+const bodyParser = require('body-parser')
 
 const feedRoutes = require('./routes/feed')
 
 const app = express()
+
+app.use(express.urlencoded({ extended: true }))
 
 app.use('/feed', feedRoutes)
 
